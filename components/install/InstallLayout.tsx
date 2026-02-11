@@ -51,7 +51,7 @@ export function InstallLayout({
       onKeyDown={handleInteraction}
       className={cn(
         'dark blade-runner',
-        'min-h-screen flex flex-col items-center justify-center p-4',
+        'min-h-screen flex flex-col items-center justify-center px-2 py-4 sm:px-4',
         'bg-[var(--br-void-black)]',
         'relative overflow-hidden',
         className

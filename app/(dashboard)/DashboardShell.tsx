@@ -526,7 +526,7 @@ export function DashboardShell({
                 isSidebarExpanded && "lg:pl-56"
             )}>
                 {/* Header */}
-                <header className="h-20 flex items-center justify-between px-6 lg:px-10 shrink-0">
+                <header className="h-20 flex items-center justify-between px-3 sm:px-6 lg:px-10 shrink-0">
                     <div className="flex items-center">
                         <button
                             className="lg:hidden p-2 text-[var(--ds-text-secondary)] mr-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2 rounded-md"
@@ -646,7 +646,7 @@ function PageContentShell({ children }: { children: React.ReactNode }) {
     const layout = usePageLayout()
 
     const mainOverflowClass = layout.overflow === 'hidden' ? 'overflow-hidden' : 'overflow-auto'
-    const mainPaddingClass = layout.padded ? 'p-6 lg:p-10' : ''
+    const mainPaddingClass = layout.padded ? 'px-3 py-4 sm:p-6 lg:p-10' : ''
     const wrapperWidthClass = getPageWidthClass(layout.width)
     const wrapperHeightClass = layout.height === 'full' ? 'h-full' : ''
 
