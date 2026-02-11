@@ -12,7 +12,7 @@ interface WebhookHierarchy {
 interface WebhookSubscription {
   ok: boolean;
   hierarchy?: WebhookHierarchy | null;
-  smartzapWebhookUrl?: string;
+  agentsflowWebhookUrl?: string;
   error?: string;
 }
 
@@ -42,34 +42,34 @@ function findActiveLevel(
 ): {
   level: '#1 Número' | '#2 WABA' | '#3 APP' | null;
   url: string | null;
-  isSmartZap: boolean;
+  isAgentsFlow: boolean;
 } {
-  if (!hierarchy) return { level: null, url: null, isSmartZap: false };
+  if (!hierarchy) return { level: null, url: null, isAgentsFlow: false };
 
   // Prioridade: #1 Phone > #2 WABA > #3 APP
   if (hierarchy.phoneNumberOverride) {
     return {
       level: '#1 Número',
       url: hierarchy.phoneNumberOverride,
-      isSmartZap: urlsMatch(hierarchy.phoneNumberOverride, expectedUrl),
+      isAgentsFlow: urlsMatch(hierarchy.phoneNumberOverride, expectedUrl),
     };
   }
   if (hierarchy.wabaOverride) {
     return {
       level: '#2 WABA',
       url: hierarchy.wabaOverride,
-      isSmartZap: urlsMatch(hierarchy.wabaOverride, expectedUrl),
+      isAgentsFlow: urlsMatch(hierarchy.wabaOverride, expectedUrl),
     };
   }
   if (hierarchy.appWebhook) {
     return {
       level: '#3 APP',
       url: hierarchy.appWebhook,
-      isSmartZap: urlsMatch(hierarchy.appWebhook, expectedUrl),
+      isAgentsFlow: urlsMatch(hierarchy.appWebhook, expectedUrl),
     };
   }
 
-  return { level: null, url: null, isSmartZap: false };
+  return { level: null, url: null, isAgentsFlow: false };
 }
 
 /**
@@ -119,11 +119,11 @@ export function WebhookStatusIndicator({
   }
 
   // Analisa hierarquia completa
-  const expectedUrl = webhookSubscription.smartzapWebhookUrl;
+  const expectedUrl = webhookSubscription.agentsflowWebhookUrl;
   const active = findActiveLevel(webhookSubscription.hierarchy, expectedUrl);
 
-  // URL do SmartZap configurada = sucesso
-  if (active.isSmartZap) {
+  // URL do AgentsFlow configurada = sucesso
+  if (active.isAgentsFlow) {
     return (
       <div className="px-4 py-3 bg-emerald-500/10 border border-emerald-500/20 rounded-lg space-y-3">
         <div className="flex items-center justify-between gap-3">
@@ -159,7 +159,7 @@ export function WebhookStatusIndicator({
     );
   }
 
-  // Problema - URL não é do SmartZap ou não existe
+  // Problema - URL não é do AgentsFlow ou não existe
   return (
     <div className="px-4 py-3 bg-red-500/10 border border-red-500/20 rounded-lg space-y-3">
       {/* Header */}

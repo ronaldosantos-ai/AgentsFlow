@@ -1,5 +1,5 @@
 /**
- * SmartZap Design System - Shadow & Elevation Tokens
+ * AgentsFlow Design System - Shadow & Elevation Tokens
  *
  * Sistema de sombras para criar hierarquia visual:
  * - Elevations (box-shadow padrão)

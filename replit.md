@@ -1,7 +1,7 @@
-# SmartZap SaaS
+# AgentsFlow SaaS
 
 ## Overview
-SmartZap is a single-tenant SaaS for WhatsApp marketing automation, built with Next.js 16 (App Router), React 19, Supabase (PostgreSQL), and Upstash QStash. It integrates Meta WhatsApp Cloud API for template messaging and Vercel AI SDK v6 for content generation.
+AgentsFlow is a single-tenant SaaS for WhatsApp marketing automation, built with Next.js 16 (App Router), React 19, Supabase (PostgreSQL), and Upstash QStash. It integrates Meta WhatsApp Cloud API for template messaging and Vercel AI SDK v6 for content generation.
 
 ## Recent Changes
 - 2026-02-11: Initial Replit setup. Configured Next.js for port 5000, allowed all dev origins, removed X-Frame-Options SAMEORIGIN header for iframe compatibility.

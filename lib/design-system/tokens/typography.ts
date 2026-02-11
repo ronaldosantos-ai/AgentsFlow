@@ -1,5 +1,5 @@
 /**
- * SmartZap Design System - Typography Tokens
+ * AgentsFlow Design System - Typography Tokens
  *
  * Sistema tipográfico com:
  * - Font families (display + body)

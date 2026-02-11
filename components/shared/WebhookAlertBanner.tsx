@@ -17,7 +17,7 @@ interface WebhookHierarchy {
 interface WebhookSubscription {
   ok: boolean;
   hierarchy?: WebhookHierarchy | null;
-  smartzapWebhookUrl?: string;
+  agentsflowWebhookUrl?: string;
 }
 
 /**
@@ -37,15 +37,15 @@ function findActiveUrl(
   expectedUrl: string | null | undefined
 ): {
   url: string | null;
-  isSmartZap: boolean;
+  isAgentsFlow: boolean;
 } {
-  if (!hierarchy) return { url: null, isSmartZap: false };
+  if (!hierarchy) return { url: null, isAgentsFlow: false };
 
   // Prioridade: #1 Phone > #2 WABA > #3 APP
   const activeUrl = hierarchy.phoneNumberOverride || hierarchy.wabaOverride || hierarchy.appWebhook;
   return {
     url: activeUrl,
-    isSmartZap: urlsMatch(activeUrl, expectedUrl),
+    isAgentsFlow: urlsMatch(activeUrl, expectedUrl),
   };
 }
 
@@ -91,18 +91,18 @@ export function WebhookAlertBanner() {
       return null; // Erro na API, não mostra banner
     }
 
-    const active = findActiveUrl(webhookSubscription.hierarchy, webhookSubscription.smartzapWebhookUrl);
+    const active = findActiveUrl(webhookSubscription.hierarchy, webhookSubscription.agentsflowWebhookUrl);
 
-    // URL do SmartZap configurada = OK
-    if (active.isSmartZap) {
+    // URL do AgentsFlow configurada = OK
+    if (active.isAgentsFlow) {
       return null;
     }
 
-    // URL configurada mas não é do SmartZap
-    if (active.url && !active.isSmartZap) {
+    // URL configurada mas não é do AgentsFlow
+    if (active.url && !active.isAgentsFlow) {
       return {
         title: 'Webhook apontando para outro sistema.',
-        description: 'A URL configurada não é do SmartZap.',
+        description: 'A URL configurada não é do AgentsFlow.',
       };
     }
 

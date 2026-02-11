@@ -1,6 +1,6 @@
 {
-  "name": "SmartZap Atendimento",
-  "short_name": "SmartZap",
+  "name": "AgentsFlow Atendimento",
+  "short_name": "AgentsFlow",
   "description": "Central de atendimento WhatsApp com IA",
   "start_url": "/atendimento",
   "scope": "/atendimento",
