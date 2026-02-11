@@ -17,7 +17,6 @@ const isProd = process.env.NODE_ENV === 'production'
 // Note: CSP is intentionally not set here to avoid accidental breakage; if needed, add it iteratively.
 const securityHeaders = [
   { key: 'X-Content-Type-Options', value: 'nosniff' },
-  { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
   { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
   { key: 'X-DNS-Prefetch-Control', value: 'off' },
@@ -30,6 +29,8 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   // Next.js 16 uses Turbopack by default
   reactStrictMode: true,
+
+  allowedDevOrigins: ['*'],
 
   // Hide framework fingerprinting header
   poweredByHeader: false,
