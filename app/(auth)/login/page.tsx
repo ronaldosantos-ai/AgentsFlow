@@ -97,7 +97,7 @@ function LoginForm() {
   }
 
   return (
-    <div className="w-full max-w-md">
+    <div className="w-full sm:max-w-md">
       {/* Logo */}
       <div className="text-center mb-8">
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-linear-to-br from-emerald-500 to-emerald-600 mb-4">
@@ -110,7 +110,7 @@ function LoginForm() {
       </div>
 
       {/* Card */}
-      <div className="bg-[var(--ds-bg-elevated)] border border-[var(--ds-border-default)] rounded-2xl p-6 shadow-xl">
+      <div className="bg-[var(--ds-bg-elevated)] border border-[var(--ds-border-default)] rounded-2xl p-4 sm:p-6 shadow-xl">
         {!isConfigured && isLocalhost && (
           <div className="mb-4 bg-[var(--ds-status-success-bg)] border border-[var(--ds-status-success)]/20 rounded-xl p-4">
             <p className="text-sm text-[var(--ds-status-success-text)] font-medium">Modo local</p>
@@ -190,7 +190,7 @@ function LoginForm() {
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen bg-[var(--ds-bg-base)] flex items-center justify-center px-2 py-4 sm:px-4">
+    <div className="min-h-screen bg-[var(--ds-bg-base)] flex items-center justify-center px-2 py-4 sm:px-6">
       <Suspense fallback={
         <div className="w-5 h-5 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin" />
       }>

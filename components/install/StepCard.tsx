@@ -62,7 +62,7 @@ export const StepCard = forwardRef<HTMLDivElement, StepCardProps>(
         }}
         className={cn(
           // Base
-          'relative p-6 sm:p-8 rounded-2xl',
+          'relative p-4 sm:p-6 md:p-8 rounded-2xl',
           // Background
           'bg-[var(--br-deep-navy)]/80 backdrop-blur-xl',
           // Border

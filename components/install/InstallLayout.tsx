@@ -51,7 +51,7 @@ export function InstallLayout({
       onKeyDown={handleInteraction}
       className={cn(
         'dark blade-runner',
-        'min-h-screen flex flex-col items-center justify-center px-2 py-4 sm:px-4',
+        'min-h-screen flex flex-col items-center justify-center px-3 py-4 sm:px-4',
         'bg-[var(--br-void-black)]',
         'relative overflow-hidden',
         className
@@ -72,7 +72,7 @@ export function InstallLayout({
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-md flex flex-col items-center">
+      <div className="relative z-10 w-full sm:max-w-md flex flex-col items-center">
         {/* Logo */}
         {showLogo && (
           <motion.div
