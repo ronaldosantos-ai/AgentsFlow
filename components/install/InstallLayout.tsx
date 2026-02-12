@@ -104,7 +104,7 @@ export function InstallLayout({
         )}
 
         {/* Main Content */}
-        <div className="w-full">{children}</div>
+        <div className="w-full overflow-hidden">{children}</div>
       </div>
     </div>
   );
